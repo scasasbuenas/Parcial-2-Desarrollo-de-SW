@@ -35,9 +35,13 @@
 
 <div class="container-fluid mt-2">
   <h2 class="text-center">SERIES</h2>
-
-  <div class="row" *ngIf="selected">
-    <app-series-detail [seriesDetail]="selectedSerie"></app-series-detail>
+  <div class="row">
+    <div class="col-md-6">
+      <p>Promedio de Ratings: {{ getPromedioRatings() }}</p>
+    </div>
+    <div class="col-md-6">
+      <p>Promedio de Episodios: {{ getPromedioEpisodios() }}</p>
+    </div>
   </div>
   <br>
   <div class="row mb-8">
