@@ -1,0 +1,56 @@
+<!-- <header style="background-color: #74a08c; padding: 10px 0; display: flex; align-items: center;">
+  <h1 style="color: rgb(230, 230, 230); margin-left: 15px">Cursos en linea</h1>
+</header>
+
+<div class="container">
+  <div class="row" style="margin-top: 20px">
+    <div [class.col-md-12]="!selectedSerie" [class.col-md-8]="selectedSerie">
+      <table class="table">
+        <thead style="background-color: rgb(230, 230, 230);">
+          <tr>
+            <th>#</th>
+            <th>Rating</th>
+            <th>Nombre</th>
+            <th>Categoria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let serie of series" (click)="showDetail(series)">
+            <td>{{ serie.id }}</td>
+            <td>{{ serie.name }}</td>
+            <td>{{ serie.img }}</td>
+            <td>{{ serie.Rating }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+     <div *ngIf="selectedSerie" class="col-md-4">
+      <app-series-detail [cursoDetail]="selectedSerie"></app-series-detail>
+      <p *ngIf="cursosConCertificado.length > 0">
+        {{ 'Los cursos ' + cursosConCertificado.join(', ') + ' ofrecen certificado' }}
+      </p>
+    </div>
+  </div>
+</div> -->
+
+<div class="container-fluid mt-2">
+  <h2 class="text-center">SERIES</h2>
+
+  <div class="row" *ngIf="selected">
+    <app-series-detail [seriesDetail]="selectedSerie"></app-series-detail>
+  </div>
+  <br>
+  <div class="row mb-8">
+    <div *ngFor="let serie of series" class="col series-card">
+      <div class="card p-2 mb-2" class="card p-2 mb-2" style="width: 14rem; height: 30rem">
+        <a class="card-block text-decoration-none" (click)="onSelected(serie)">
+            <img class="card-body black-text" [src]="serie.img" [alt]="serie.name" style="width: 100%; height: 18rem; border: 1px solid rgb(202, 202, 202); border-radius: 0.45rem" />
+          <div class="card-body black-text">
+            <h5 class="card-title" style="margin-bottom: 15px">{{ serie.name }}</h5>
+            <p class="card-text">Rating: {{ serie.Rating }}</p>
+            <p class="card-text">Categories: {{ serie.categorie }}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+</div>

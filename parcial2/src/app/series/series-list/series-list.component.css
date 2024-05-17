@@ -1,0 +1,19 @@
+.card {
+  transition: transform 0.2s, box-shadow .2s;
+  border-radius: 0.50rem; /* Bordes redondeados */
+}
+
+.card:hover {
+  border: 2px solid #ff1e00; /* Borde más grueso */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 3px 10px rgba(0, 0, 0, 0.19); /* Sombra más pronunciada */
+  transform: scale(0.90); /* Disminuye tamaño ligeramente */
+  border-radius: 0.50rem; /* Asegurar bordes redondeados durante hover */
+}
+
+.card-body.text {
+  color: #000
+}
+
+.card-block.text-decoration-none {
+  color: inherit; /* Hereda el color del elemento padre */
+}
